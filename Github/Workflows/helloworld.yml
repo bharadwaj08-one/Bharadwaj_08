@@ -1,12 +1,12 @@
-name: Hello World Action. # This workflow prints "Hello World" to the console.
-# events that trigger the workflow
-on: 
-  push:
-  workflow_dispatch:
-# jobs define the tasks to be run
+name: Pull Request Hello World
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
 jobs:
-  say-hello:
+  hello-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Message
-        run: echo "Hello World"
+      - name: Say Hello
+        run: echo "Hello World! This was triggered by a Pull Request."
