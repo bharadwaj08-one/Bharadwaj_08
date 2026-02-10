@@ -1,0 +1,12 @@
+name: Hello World Action. # This workflow prints "Hello World" to the console.
+# events that trigger the workflow
+on: 
+  push:
+  workflow_dispatch:
+# jobs define the tasks to be run
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Message
+        run: echo "Hello World"
